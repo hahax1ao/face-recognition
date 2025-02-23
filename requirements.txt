@@ -1,0 +1,5 @@
+opencv-python
+gradio
+gradio-webrtc
+mediapipe
+Pillow

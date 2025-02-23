@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-face-webrtc-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: face-webrtc
+  template:
+    metadata:
+      labels:
+        app: face-webrtc
+    spec:
+      containers:
+      - name: face-webrtc-app
+        image: face-webrtc-app:latest  # 这里使用我们本地构建的镜像
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 7860
